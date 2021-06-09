@@ -11,9 +11,13 @@ public class RockPaperScissor {
         int usr = 0;
         int draw = 0;
 
+        System.out.println("It is a Rock, Paper, Scissor Game");
+        System.out.print("Enter total number of rounds: ");
+        int totalRound = sc.nextInt();
+
         do {
             round++;
-            System.out.println("1 is Rock, 2 is Paper, 3 is Scissor");
+            System.out.println("\n1 is Rock, 2 is Paper, 3 is Scissor");
             System.out.print("Enter your choice: ");
             int num = sc.nextInt();
 
@@ -63,7 +67,7 @@ public class RockPaperScissor {
 //            System.out.print("Do you want to Play Again? Y/N: ");
 //            repeat = sc.next().charAt(0);
 //        }while(repeat == 'Y' || repeat == 'y');
-        }while(round<3);
+        }while(round<totalRound);
 
         System.out.println("Final Result: ");
         System.out.printf("User Won %d times\n", usr);
