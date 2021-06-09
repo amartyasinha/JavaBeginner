@@ -5,41 +5,77 @@ public class RockPaperScissor {
 
         Random rn = new Random();
         Scanner sc = new Scanner(System.in);
-        char repeat;
+//        char repeat;
+        int round = 0;
+        int comp = 0;
+        int usr = 0;
+        int draw = 0;
 
-        do{
+        do {
+            round++;
             System.out.println("1 is Rock, 2 is Paper, 3 is Scissor");
             System.out.print("Enter your choice: ");
             int num = sc.nextInt();
 
             int x = 1;
-            while(true){
+            while (true) {
                 x = rn.nextInt(4);
-                if(x > 0){ break; }
+                if (x > 0) {
+                    break;
+                }
             }
             System.out.printf("Computer has chosen %d\n", x);
 
-            if(num == x){ System.out.println("Draw"); }
-
-            else if(num == 1){
-                if (x == 2){ System.out.println("Computer Wins"); }
-                if (x == 3){ System.out.println("User Wins"); }
+            if (num == x) {
+                System.out.println("Draw");
+                draw++;
+            } else if (num == 1) {
+                if (x == 2) {
+                    System.out.println("Computer Wins");
+                    comp++;
+                }
+                if (x == 3) {
+                    System.out.println("User Wins");
+                    usr++;
+                }
+            } else if (num == 2) {
+                if (x == 1) {
+                    System.out.println("User Wins");
+                    usr++;
+                }
+                if (x == 3) {
+                    System.out.println("Computer Wins");
+                    comp++;
+                }
+            } else if (num == 3) {
+                if (x == 1) {
+                    System.out.println("Computer Wins");
+                    comp++;
+                }
+                if (x == 2) {
+                    System.out.println("User Wins");
+                    usr++;
+                }
+            } else {
+                System.out.println("Wrong Input");
             }
 
-            else if(num == 2){
-                if (x == 1){ System.out.println("User Wins"); }
-                if (x == 3){ System.out.println("Computer Wins"); }
-            }
+//            System.out.print("Do you want to Play Again? Y/N: ");
+//            repeat = sc.next().charAt(0);
+//        }while(repeat == 'Y' || repeat == 'y');
+        }while(round<3);
 
-            else if(num == 3){
-                if (x == 1){ System.out.println("Computer Wins"); }
-                if (x == 2){ System.out.println("User Wins"); }
-            }
+        System.out.println("Final Result: ");
+        System.out.printf("User Won %d times\n", usr);
+        System.out.printf("Computer Won %d times\n", comp);
+        System.out.printf("Total Draw: %d times\n", draw);
 
-            else{ System.out.println("Wrong Input"); }
-
-            System.out.print("Do you want to Play Again? Y/N: ");
-            repeat = sc.next().charAt(0);
-        }while(repeat == 'Y' || repeat == 'y');
+        if (usr > comp) {
+            System.out.println("User Won the Match!");
+        } else if (comp > draw) {
+            System.out.println("Computer Wont the Match!");
+        } else {
+            System.out.println("Match Draw!");
+        }
     }
 }
