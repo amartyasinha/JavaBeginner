@@ -37,6 +37,6 @@ Thread Runnable concept.
 
 ## UserInput
 A simple program to take user input.
-##Author
+## Author
 
 - [@amartyasinha918](https://www.github.com/amartyasinha918)
